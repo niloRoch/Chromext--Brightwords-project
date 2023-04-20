@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "BRIGHTWORDS",
+    "description": "The Chrome extension randomly displays a famous quote. With this extension, you can receive a daily dose of inspiration from some of the brightest minds in history. The quotes include thoughts from philosophers, world leaders, artists, scientists, and many others. Additionally, the extension features a simple and user-friendly interface, allowing you to share your favorite quotes with your friends and family. The extension is perfect for those seeking a quick dose of wisdom and inspiration every day.",
+    "version": "1.0",
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "192": "icon192.png",
+        "512": "icon512.png"
+    },
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      "popup.html",
+      "popup.js",
+      "style.css"
+    ]
+}
+  
+  
